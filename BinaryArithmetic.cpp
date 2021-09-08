@@ -69,9 +69,10 @@ int getInt(std::string_view prompt) {
 
 int main() {
     int numQues{getInt("How many questions would you like?\n")};
-    std::cout << "You can have " << 2 * numQues
+    const int questionTypes{2};
+    std::cout << "You can have " << questionTypes * numQues
               << " questions instead, Good luck!\n";
-    for (int i = 0; i < numQues; ++i) {
+    for (int qCount = 0; qCount < numQues; ++qCount) {
         askQuestions();
     }
     return 0;
